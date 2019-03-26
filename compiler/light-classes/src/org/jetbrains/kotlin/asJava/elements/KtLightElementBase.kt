@@ -40,4 +40,7 @@ abstract class KtLightElementBase(private val parent: PsiElement): LightElement(
     override fun getPresentation() = (kotlinOrigin ?: this).let { ItemPresentationProviders.getItemPresentation(it) }
     override fun isValid() = parent.isValid
     override fun findElementAt(offset: Int) = kotlinOrigin?.findElementAt(offset)
+    override fun isEquivalentTo(another: PsiElement?): Boolean {
+        TODO("calling isEquivalentTo on light element")
+    }
 }
